@@ -4,7 +4,7 @@
 
 #### Includes:
 - Login and SignUp
-- Menu Features
+- Withdrawal and Deposit
 
 #### To Be Implemented:
 - Accounts remaineven after restarting the program

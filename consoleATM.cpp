@@ -160,16 +160,29 @@ void depositMoney() {
     int deposit;
     cout << "\nDeposit: ";
     cin >> deposit;
-    users[activeUser].money += abs(deposit);
-    users[activeUser].deposits++;
+    if (deposit <= 0) {
+        cout << "\nError: Deposit lass than or equal to zero" << endl;
+    }
+    else {
+        users[activeUser].money += abs(deposit);
+        users[activeUser].deposits++;
+    }
 }
 
 void withdrawMoney() {
     int withdrawal;
-    cout << "\nWithdrawal: ";
+    cout << "\n\nWithdrawal: ";
     cin >> withdrawal;
-    users[activeUser].money -= abs(withdrawal);
-    users[activeUser].withdrawals++;
+    if (withdrawal > users[activeUser].money) {
+        cout << "Error: Withdrawal is greater than balance" << endl;
+    }
+    else if (withdrawal == 0) {
+        cout << "Error: Withdrawal is zero" << endl;
+    }
+    else {
+        users[activeUser].money -= abs(withdrawal);
+        users[activeUser].withdrawals++;
+    }
 }
 
 void runProgram() {
@@ -187,8 +200,8 @@ void runProgram() {
             cout << "\nName: " << users[activeUser].name << endl
                 // << "Password: " << users[activeUser].password << endl
                 << "Balance: " << users[activeUser].money << endl
-                << "Withdrawals" << users[activeUser].withdrawals << endl
-                << "Deposit" << users[activeUser].deposits << endl;
+                << "Withdrawals: " << users[activeUser].withdrawals << endl
+                << "Deposit: " << users[activeUser].deposits << endl;
         }
         else if (accountSelection == 4) {
             loggedIn = false;

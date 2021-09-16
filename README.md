@@ -7,4 +7,4 @@
 - Withdrawal and Deposit
 
 #### To Be Implemented:
-- Accounts remaineven after restarting the program
+- Accounts remain after restarting the program

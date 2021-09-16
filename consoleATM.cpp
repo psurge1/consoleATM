@@ -7,6 +7,8 @@ struct newUser {
     string name;
     string password;
     float money;
+    int withdrawals;
+    int deposits;
 };
 
 unordered_map<string, newUser> users;
@@ -143,7 +145,9 @@ string signUp() {
                 newUser n = {
                     userN,
                     passW,
-                    balance
+                    balance,
+                    0,
+                    0
                 };
                 users[userN] = n;
                 return userN;
@@ -157,6 +161,7 @@ void depositMoney() {
     cout << "\nDeposit: ";
     cin >> deposit;
     users[activeUser].money += abs(deposit);
+    users[activeUser].deposits++;
 }
 
 void withdrawMoney() {
@@ -164,6 +169,7 @@ void withdrawMoney() {
     cout << "\nWithdrawal: ";
     cin >> withdrawal;
     users[activeUser].money -= abs(withdrawal);
+    users[activeUser].withdrawals++;
 }
 
 void runProgram() {
@@ -176,10 +182,13 @@ void runProgram() {
         else if (accountSelection == 2) {
             withdrawMoney();
         }
+        
         else if (accountSelection == 3) {
             cout << "\nName: " << users[activeUser].name << endl
-                << "Password: " << users[activeUser].password << endl //delete
-                << "Balance: " << users[activeUser].money << endl;
+                // << "Password: " << users[activeUser].password << endl
+                << "Balance: " << users[activeUser].money << endl
+                << "Withdrawals" << users[activeUser].withdrawals << endl
+                << "Deposit" << users[activeUser].deposits << endl;
         }
         else if (accountSelection == 4) {
             loggedIn = false;

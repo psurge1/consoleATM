@@ -1,10 +1,10 @@
 # consoleATM
 
-#### ATM console application written in C++
+### ATM console application written in C++
 
-##### Includes:
+#### Includes:
 - Login and SignUp
 - Menu Features
 
-**** To Be Implemented:
+#### To Be Implemented:
 - Accounts remaineven after restarting the program

@@ -37,7 +37,7 @@ int mainMenu() {
         << "       $$$    $$$" << endl
         << "       $$$    $$$" << endl;
 
-    cout << "\n\nWelcome to Money Monkey ATM! What would you like to do?" <<endl;
+    cout << "\n\nWelcome to Money ATM! What would you like to do?" <<endl;
     cout << "1) Login\n2) SignUp\n3) Quit" << endl;
     int userPick;
     bool picking = true;
